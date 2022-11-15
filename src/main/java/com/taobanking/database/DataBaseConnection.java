@@ -8,14 +8,13 @@ public class DataBaseConnection {
     private String password = "password";
     private Connection connection;
 
-    public Connection getConnection() {
+    public void getConnection() throws SQLException {
         try {
             this.connection = DriverManager.getConnection(this.jcbURL, this.username, this.password);
             System.out.println("Connected to PostgreSQL database!");
         } catch (Exception e) {
-            e.printStackTrace();
+            throw new SQLException("Error connecting to PostgreSQL database");
         }
-        return this.connection;
     }
 
     public void closeConnection() {

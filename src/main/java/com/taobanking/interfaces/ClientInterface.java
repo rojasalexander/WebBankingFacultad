@@ -10,12 +10,12 @@ public interface ClientInterface {
     Integer getClientId();
     String getClientName();
     String getClientCi();
-    String getClientBirthdate();
+    String getClientBirthDate();
 
     // Setters
     void setClientId(Integer client_id);
     void setClientName(String client_name);
     void setClientCi(String client_ci);
-    void setClientBirthdate(String client_birthdate);
+    void setClientBirthDate(String client_birthdate);
     
 }
