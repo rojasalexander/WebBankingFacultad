@@ -16,6 +16,12 @@ public class Client implements ClientInterface {
         this.client_birthdate = client_birthdate;
     }
 
+    public Client(String client_name, String client_ci, String client_birthdate) {
+        this.client_name = client_name;
+        this.client_ci = client_ci;
+        this.client_birthdate = client_birthdate;
+    }
+
     // Getters
     public Integer getClientId() {
         return this.client_id;
@@ -29,7 +35,7 @@ public class Client implements ClientInterface {
         return this.client_ci;
     }
 
-    public String getClientBirthdate() {
+    public String getClientBirthDate() {
         return this.client_birthdate;
     }
 
@@ -46,7 +52,7 @@ public class Client implements ClientInterface {
         this.client_ci = client_ci;
     }
 
-    public void setClientBirthdate(String client_birthdate) {
+    public void setClientBirthDate(String client_birthdate) {
         this.client_birthdate = client_birthdate;
     }    
 }
