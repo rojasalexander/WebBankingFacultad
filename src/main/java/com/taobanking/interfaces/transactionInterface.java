@@ -1,6 +1,6 @@
 package com.taobanking.interfaces;
 
-public interface transactionInterface {
+public interface TransactionInterface {
     Integer transaction_id = null;
     String transaction_date = null;
     Integer transaction_number = null;

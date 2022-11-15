@@ -1,15 +1,15 @@
 package com.taobanking.classes;
 
-import com.taobanking.interfaces.transactionInterface;
+import com.taobanking.interfaces.TransactionInterface;
 
-public class transaction implements transactionInterface {
+public class Transaction implements TransactionInterface {
     private Integer transaction_id;
     private String transaction_date;
     private Integer transaction_number;
     private Integer transaction_amount;
     private Integer account_id;
 
-    public transaction(Integer transaction_id, String transaction_date, Integer transaction_number, Integer transaction_amount, Integer account_id) {
+    public Transaction(Integer transaction_id, String transaction_date, Integer transaction_number, Integer transaction_amount, Integer account_id) {
         this.transaction_id = transaction_id;
         this.transaction_date = transaction_date;
         this.transaction_number = transaction_number;
