@@ -33,7 +33,14 @@ public class ClientDB extends DataBaseConnection {
     public void updateClient(Client client) {
         try {
             this.getConnection();
-            String query = "UPDATE clients SET client_name = '" + client.getClientName() + "', client_ci = '" + client.getClientCi() + "', client_birth_date = '" + client.getClientBirthDate() + "' WHERE client_id = " + client.getClientId();
+            String query = "UPDATE clients SET client_name = '" 
+            + client.getClientName() 
+            + "', client_ci = '" 
+            + client.getClientCi() 
+            + "', client_birth_date = '" 
+            + client.getClientBirthDate() 
+            + "' WHERE client_id = " 
+            + client.getClientId();
             this.executeUpdate(query);
             this.closeConnection();
         } catch (SQLException e) {
@@ -58,6 +65,44 @@ public class ClientDB extends DataBaseConnection {
         try {
             this.getConnection();
             String query = "SELECT * FROM clients WHERE client_id = " + clientId;
+            ResultSet resultSet = this.executeQuery(query);
+            Client client = null;
+            while (resultSet.next()) {
+                client = new Client(resultSet.getInt("client_id"), resultSet.getString("client_name"), resultSet.getString("client_ci"), resultSet.getString("client_birth_date"));
+            }
+            this.closeConnection();
+            return client;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    // Traer todos los clientes
+    public Client[] getAllClients() {
+        try {
+            this.getConnection();
+            String query = "SELECT * FROM clients";
+            ResultSet resultSet = this.executeQuery(query);
+            Client[] clients = new Client[100];
+            int i = 0;
+            while (resultSet.next()) {
+                clients[i] = new Client(resultSet.getInt("client_id"), resultSet.getString("client_name"), resultSet.getString("client_ci"), resultSet.getString("client_birth_date"));
+                i++;
+            }
+            this.closeConnection();
+            return clients;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    // Traer cliente por ci
+    public Client getClientByCi(String clientCi) {
+        try {
+            this.getConnection();
+            String query = "SELECT * FROM clients WHERE client_ci = '" + clientCi + "'";
             ResultSet resultSet = this.executeQuery(query);
             Client client = null;
             while (resultSet.next()) {

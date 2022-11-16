@@ -13,6 +13,10 @@ public class Bank implements BankInterface{
         this.bank_address = bank_address;
     }
 
+    public Bank() {
+        
+    }
+
     public Integer getBankId() {
         return bank_id;
     }
