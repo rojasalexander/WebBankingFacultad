@@ -87,14 +87,35 @@ public class AccountDB  extends DataBaseConnection{
         }
     }
 
-    // Metodo actualizar Saldo
-    public void updateAccountBalance(Account account) {
+    // Metodo get balance de cuente por id de cliente
+    public int getAccountBalanceByClientId(int clientId) {
+        int balance = 0;
+        try {
+            this.getConnection();
+            String query = "SELECT account_balance FROM accounts WHERE client_id = " + clientId;
+            ResultSet rs = this.executeQuery(query);
+            while (rs.next()) {
+                balance = rs.getInt("account_balance");
+            }
+            this.closeConnection();
+        } catch (SQLException e) {
+            System.out.println("Error connecting to PostgreSQL database");
+        }
+        return balance;
+    }
+
+    /**
+     * Metodo set balance de cuente por id de cliente
+     * @param clientId
+     * @param accountBalance
+     */
+    public void setAccountBalanceByClientId(int clientId, int accountBalance) {
         try {
             this.getConnection();
             String query = "UPDATE accounts SET account_balance = '" 
-            + account.getAccountBalance() 
-            + "' WHERE account_id = " 
-            + account.getAccountId();
+            + accountBalance 
+            + "' WHERE client_id = " 
+            + clientId;
             this.executeUpdate(query);
             this.closeConnection();
         } catch (SQLException e) {
@@ -102,7 +123,10 @@ public class AccountDB  extends DataBaseConnection{
         }
     }
 
-    // Metodo eliminar cuenta
+    /**
+     * Metodo eliminar cuenta
+     * @param account
+     */
     public void deleteAccount(Account account) {
         try {
             this.getConnection();
@@ -114,24 +138,24 @@ public class AccountDB  extends DataBaseConnection{
         }
     }
 
-    // Metodo buscar existencia de cuenta
-    public boolean searchAccount(Integer account_pin) {
-        ResultSet resulSet;
+    /**
+     * Metodo get cuenta por id de cliente
+     * @param clientId
+     * @return
+     */
+    public int getAccountPinByClientId(int client_id) {
+        int account_pin = 0;
         try {
             this.getConnection();
-            String query = "SELECT COUNT(*) FROM accounts WHERE account_pin = " + account_pin;
-            resulSet = this.executeQuery(query);
-            resulSet.next();
-            if (resulSet.getInt(1) == 1) {
-                this.closeConnection();
-                return true;
-            } else {
-                this.closeConnection();
-                return false;
+            String query = "SELECT account_pin FROM accounts WHERE client_id = " + client_id;
+            ResultSet result = this.executeQuery(query);
+            while (result.next()) {
+                account_pin = result.getInt("account_pin");
             }
+            this.closeConnection();
         } catch (SQLException e) {
             System.out.println("Error connecting to PostgreSQL database");
-            return false;
         }
+        return account_pin;
     }
 }
