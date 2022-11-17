@@ -26,7 +26,7 @@ public class TransactionDB extends DataBaseConnection {
 
             String query = "INSERT INTO transactions (transaction_date, transaction_amount, account_id, transaction_number" +
             "VALUES ('" + this.transaction.getTransactionDate() + "', " + this.transaction.getTransactionAmount() + ", " +
-            this.transaction.getAccountId() + ", " + this.transaction.getTransactionNumber() + ");";
+            this.transaction.getAccountId() + ");";
 
             this.executeQuery(query);
             this.closeConnection();
