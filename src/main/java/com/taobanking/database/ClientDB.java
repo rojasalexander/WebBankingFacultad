@@ -135,6 +135,7 @@ public class ClientDB extends DataBaseConnection {
 
         clientDB.insertClient(client);
 
+        sc.close();
     }
 
 }
