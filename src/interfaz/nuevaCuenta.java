@@ -1,5 +1,5 @@
 
-package interfaz;
+package com.taobanking.ui.interfaz;
 
 import java.awt.Color;
 
@@ -36,6 +36,7 @@ public class nuevaCuenta extends javax.swing.JFrame {
         campoApellido = new javax.swing.JTextField();
         nombreLabel = new javax.swing.JLabel();
         campoCedula = new javax.swing.JTextField();
+        jDateChooser1 = new com.toedter.calendar.JDateChooser();
         botonCrearNuevaCuenta = new javax.swing.JButton();
         botonVolverNuevaCuenta = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
@@ -151,18 +152,22 @@ public class nuevaCuenta extends javax.swing.JFrame {
             }
         });
 
+        jDateChooser1.setBackground(new java.awt.Color(255, 255, 255));
+        jDateChooser1.setForeground(new java.awt.Color(255, 255, 255));
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(apellidoLabel)
-                    .addComponent(nombreLabel)
-                    .addComponent(fechaNacLabel)
-                    .addComponent(campoApellido, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(campoNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(jDateChooser1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(apellidoLabel, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(nombreLabel, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(fechaNacLabel, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(campoApellido, javax.swing.GroupLayout.DEFAULT_SIZE, 243, Short.MAX_VALUE)
+                    .addComponent(campoNombre, javax.swing.GroupLayout.DEFAULT_SIZE, 243, Short.MAX_VALUE))
                 .addGap(44, 44, 44)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(campoPinCuenta)
@@ -193,7 +198,9 @@ public class nuevaCuenta extends javax.swing.JFrame {
                     .addComponent(campoPinCuenta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(7, 7, 7)
                 .addComponent(fechaNacLabel)
-                .addContainerGap(56, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(22, Short.MAX_VALUE))
         );
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, -1, -1));
@@ -399,6 +406,7 @@ public class nuevaCuenta extends javax.swing.JFrame {
     private javax.swing.JTextField campoPinCuenta;
     private javax.swing.JLabel cedulaLabel;
     private javax.swing.JLabel fechaNacLabel;
+    private com.toedter.calendar.JDateChooser jDateChooser1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;

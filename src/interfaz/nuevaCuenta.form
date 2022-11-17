@@ -88,14 +88,15 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="apellidoLabel" min="-2" max="-2" attributes="0"/>
-                          <Component id="nombreLabel" min="-2" max="-2" attributes="0"/>
-                          <Component id="fechaNacLabel" min="-2" max="-2" attributes="0"/>
-                          <Component id="campoApellido" alignment="0" min="-2" pref="243" max="-2" attributes="0"/>
-                          <Component id="campoNombre" min="-2" pref="243" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                          <Component id="jDateChooser1" max="32767" attributes="0"/>
+                          <Component id="apellidoLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="nombreLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="fechaNacLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="campoApellido" alignment="1" pref="243" max="32767" attributes="0"/>
+                          <Component id="campoNombre" alignment="1" pref="243" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
@@ -135,7 +136,9 @@
                       </Group>
                       <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
                       <Component id="fechaNacLabel" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="56" max="32767" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jDateChooser1" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace pref="22" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -259,6 +262,16 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="campoCedulaActionPerformed"/>
                 <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="campoCedulaKeyTyped"/>
               </Events>
+            </Component>
+            <Component class="com.toedter.calendar.JDateChooser" name="jDateChooser1">
+              <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                  <Connection code="new java.awt.Color(255, 255, 255)" type="code"/>
+                </Property>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                  <Connection code="new java.awt.Color(255, 255, 255)" type="code"/>
+                </Property>
+              </Properties>
             </Component>
           </SubComponents>
         </Container>
