@@ -23,6 +23,8 @@ public class CreditCard implements CreditCardInterface {
         this.account_id = account_id;
     }
 
+    public CreditCard() { }
+
     // Getters
     public Integer getCardId() {
         return this.card_id;

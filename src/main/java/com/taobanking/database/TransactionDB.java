@@ -15,11 +15,11 @@ public class TransactionDB extends DataBaseConnection {
         this.transaction = transaction;
     }
 
-     /**
-      * Insertar una nueva transaccion en la tabla
-      * @param transaction
-      * @throws SQLException
-      */
+    /**
+     * Insertar una nueva transaccion en la tabla
+    * @param transaction
+    * @throws SQLException
+    */
     public void insertTransaction() {
         try {
             this.getConnection();
