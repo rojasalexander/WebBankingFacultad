@@ -2,6 +2,7 @@ package com.taobanking.database;
 
 import com.taobanking.classes.Client;
 import java.sql.*;
+import java.util.Scanner;
 
 
 public class ClientDB extends DataBaseConnection {
@@ -114,6 +115,26 @@ public class ClientDB extends DataBaseConnection {
             e.printStackTrace();
             return null;
         }
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        ClientDB clientDB = new ClientDB();
+
+        // Insertar un cliente
+
+        System.out.println("Ingrese el nombre del cliente");
+        String clientName = sc.nextLine();
+        System.out.println("Ingrese la cedula del cliente");
+        String clientCi = sc.nextLine();
+        System.out.println("Ingrese la fecha de nacimiento del cliente");
+        String clientBirthDate = sc.nextLine();
+
+        Client client = new Client(clientName, clientCi, clientBirthDate);
+
+        clientDB.insertClient(client);
+
     }
 
 }
